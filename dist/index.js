@@ -206,11 +206,11 @@ define("interpreter", ["require", "exports", "utils"], function (require, export
         agents.forEach(agent => agent.setOilMarks(oilMarks));
         const interval = setInterval(function () {
             agents.forEach(agent => agent.executeNextCommand());
-            const allAgentsHaveCommandsLeft = agents
-                .reduce((acc, agent) => acc && agent.currentCommand, true);
+            const someAgentsHaveCommandsLeft = agents
+                .reduce((acc, agent) => acc || agent.currentCommand, false);
             const areAgentsColiding = agents
                 .reduce((acc, agent) => acc || utils_2.isColiding(agent, agents), false);
-            if (!allAgentsHaveCommandsLeft) {
+            if (!someAgentsHaveCommandsLeft) {
                 console.log('No more commands to execute for one or more agents. Stopping.');
                 clearInterval(interval);
             }

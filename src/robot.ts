@@ -16,10 +16,10 @@ export default function Robot ({ name = 'Unknown', commands = [], initialPositio
     },
     destroy () {
       this.renderer.destroy()
-    }
+    },
     setOilMarks (marks) {
       this.oilMarks = marks
-    }
+    },
     executeNextCommand () {
       this.executeCommand(this.currentCommand)
       this.currentCommand = this.getNextCommand()

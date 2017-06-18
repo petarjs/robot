@@ -1,0 +1,5 @@
+export const GOTO = 'goto'
+export const LEFT = 'left'
+export const RIGHT = 'right'
+export const SKIP = 'skip'
+export const LABEL = 'label'

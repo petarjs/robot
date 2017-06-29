@@ -42,7 +42,6 @@ describe('isColliding', () => {
 
     expect(result).toBe(true)
   })
-  })
 
   it('should detect multiple agents NOT colliding', () => {
     const agents = [{

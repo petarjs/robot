@@ -1,4 +1,8 @@
-export function getFirstWord (text) {
+export function getFirstWord (text: String) {
+  if (!text) {
+    throw Error('Cannot get the first word of empty text')
+  }
+
   return text.match(/^(\w+)/)[1]
 }
 
